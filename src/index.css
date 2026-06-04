@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Syne:wght@500;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* Custom premium scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Glassmorphism utility classes for non-Tailwind specific elements if needed */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass-panel-dark {
+  background: rgba(10, 10, 12, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.mesh-gradient {
+  background: radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+              radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+              radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%), 
+              radial-gradient(at 0% 100%, hsla(339,49%,30%,1) 0, transparent 50%), 
+              radial-gradient(at 100% 100%, hsla(225,39%,30%,1) 0, transparent 50%);
+  filter: blur(80px);
+  opacity: 0.5;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.asymmetric-border {
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+}
+
+.blob-avatar {
+  border-radius: 43% 57% 41% 59% / 57% 45% 55% 43%;
+  background: linear-gradient(135deg, #f43f5e, #cb69ff, #00d2ff);
+  padding: 3px;
+  box-shadow: 0 0 40px rgba(244, 63, 94, 0.45);
+  animation: blob-bounce 10s ease-in-out infinite alternate;
+}
+
+@keyframes blob-bounce {
+  0% {
+    border-radius: 43% 57% 41% 59% / 57% 45% 55% 43%;
+  }
+  50% {
+    border-radius: 54% 46% 51% 49% / 44% 56% 44% 56%;
+  }
+  100% {
+    border-radius: 41% 59% 45% 55% / 59% 41% 59% 41%;
+  }
+}
+
+.sophisticated-bg {
+  background-color: #040113;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.28) 0%, transparent 60%),
+    radial-gradient(circle at 10% 30%, rgba(244, 63, 94, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 70%, rgba(99, 102, 241, 0.08) 0%, transparent 40%);
+}
+
+.merqato-glass-card {
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.merqato-glass-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.6), 0 0 20px rgba(139, 92, 246, 0.15);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* GLOBAL THEME SWITCHER - LIGHT MODE OVERRIDES FOR MERQATO SOVEREIGN CONSOLE */
+.merqato-theme-light {
+  background-color: #f8fafc !important; /* Cool slate light grey */
+  color: #1e293b !important;
+  border-color: #cbd5e1 !important;
+
+  /* Redefine Tailwind CSS v4 variables for zinc shades within light mode scope so that all dark utilities resolve to light-mode elegant counterparts automatically! */
+  --color-zinc-950: #ffffff !important;
+  --color-zinc-900: #f1f5f9 !important;
+  --color-zinc-850: #ebd5e1 !important;
+  --color-zinc-800: #cbd5e1 !important;
+  --color-zinc-700: #94a3b8 !important;
+  --color-zinc-650: #475569 !important;
+  --color-zinc-600: #475569 !important;
+  --color-zinc-550: #334155 !important;
+  --color-zinc-500: #64748b !important;
+  --color-zinc-450: #334155 !important;
+  --color-zinc-400: #334155 !important;
+  --color-zinc-350: #1e293b !important;
+  --color-zinc-300: #1e293b !important;
+  --color-zinc-200: #0f172a !important;
+  --color-zinc-100: #0f172a !important;
+  --color-zinc-50: #0f172a !important;
+}
+
+/* Layout backgrounds & outer wrappers inside the light console */
+.merqato-theme-light .bg-zinc-950,
+.merqato-theme-light .bg-zinc-900,
+.merqato-theme-light .bg-zinc-850,
+.merqato-theme-light .bg-[#070709] {
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+}
+
+/* Specific button, span, and label overrides to guarantee no solid dark panels render inside light mode */
+.merqato-theme-light span.bg-zinc-950,
+.merqato-theme-light span.bg-zinc-900,
+.merqato-theme-light button.bg-zinc-950,
+.merqato-theme-light button.bg-zinc-900,
+.merqato-theme-light label.bg-zinc-950,
+.merqato-theme-light label.bg-zinc-900 {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+.merqato-theme-light button.bg-zinc-950:hover,
+.merqato-theme-light button.bg-zinc-900:hover,
+.merqato-theme-light label.bg-zinc-950:hover,
+.merqato-theme-light label.bg-zinc-900:hover {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  border-color: #94a3b8 !important;
+}
+
+/* Specific tab bar navigation overrides for high contrast and elegant light look */
+.merqato-theme-light div.bg-zinc-950.flex.overflow-x-auto {
+  background-color: #e2e8f0 !important;
+  border-bottom-color: #cbd5e1 !important;
+  padding-bottom: 8px !important;
+  padding-top: 8px !important;
+}
+
+.merqato-theme-light div.bg-zinc-950.flex.overflow-x-auto button {
+  color: #475569 !important;
+}
+
+.merqato-theme-light div.bg-zinc-950.flex.overflow-x-auto button:hover {
+  background-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+.merqato-theme-light div.bg-zinc-950.flex.overflow-x-auto button[class*="bg-zinc-800"] {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+}
+
+/* Master panels, sections and cards should have uniform white backgrounds for high depth contrast */
+.merqato-theme-light .bg-zinc-950\/60,
+.merqato-theme-light .bg-zinc-950\/40,
+.merqato-theme-light .bg-zinc-950\/30,
+.merqato-theme-light .bg-zinc-900\/60,
+.merqato-theme-light .bg-zinc-900\/50,
+.merqato-theme-light .bg-zinc-900\/45,
+.merqato-theme-light .bg-zinc-900\/40,
+.merqato-theme-light .bg-zinc-900\/35,
+.merqato-theme-light .bg-zinc-900\/30,
+.merqato-theme-light .bg-zinc-900\/25,
+.merqato-theme-light .bg-zinc-900\/20 {
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+}
+
+/* Active tab state buttons and action buttons */
+.merqato-theme-light .bg-zinc-800 {
+  background-color: #1e293b !important;
+  color: #ffffff !important;
+}
+
+/* Inner lists / row tables inside cards (like custom files, donor logs, product lists) */
+.merqato-theme-light .bg-zinc-950\/45,
+.merqato-theme-light .bg-zinc-950\/20,
+.merqato-theme-light .bg-zinc-900\/15,
+.merqato-theme-light .bg-zinc-900\/10 {
+  background-color: #f1f5f9 !important;
+  color: #1e293b !important;
+}
+
+/* Inputs, textareas & select elements in light theme */
+.merqato-theme-light input,
+.merqato-theme-light textarea,
+.merqato-theme-light select {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+.merqato-theme-light input::placeholder,
+.merqato-theme-light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Border overrides - use simple light slate grey for elegant thin borders */
+.merqato-theme-light .border-zinc-800,
+.merqato-theme-light .border-zinc-800\/80,
+.merqato-theme-light .border-zinc-850,
+.merqato-theme-light .border-zinc-900,
+.merqato-theme-light .border-zinc-900\/50,
+.merqato-theme-light .border-t,
+.merqato-theme-light .border-b,
+.merqato-theme-light .border-r {
+  border-color: #cbd5e1 !important;
+}
+
+.merqato-theme-light [class*="border-zinc-"] {
+  border-color: #cbd5e1 !important;
+}
+
+/* Text class overrides in light theme for exceptional clarity */
+.merqato-theme-light .text-white {
+  color: #0f172a !important;
+}
+
+.merqato-theme-light .text-zinc-100,
+.merqato-theme-light .text-zinc-200,
+.merqato-theme-light .text-zinc-300,
+.merqato-theme-light .text-zinc-350,
+.merqato-theme-light .text-zinc-400,
+.merqato-theme-light .text-zinc-450 {
+  color: #1e293b !important;
+}
+
+.merqato-theme-light .text-zinc-500,
+.merqato-theme-light .text-zinc-550,
+.merqato-theme-light .text-zinc-600,
+.merqato-theme-light .text-zinc-650 {
+  color: #475569 !important;
+}
+
+.merqato-theme-light .text-zinc-700,
+.merqato-theme-light .text-zinc-850,
+.merqato-theme-light .text-zinc-900 {
+  color: #0f172a !important;
+}
+
+/* Hover and active element adjustments in light mode so they never look dark-on-dark */
+.merqato-theme-light [class*="hover\:bg-zinc-850"]:hover,
+.merqato-theme-light [class*="hover\:bg-zinc-900"]:hover,
+.merqato-theme-light [class*="hover\:bg-zinc-950"]:hover {
+  background-color: #e2e8f0 !important;
+}
+
+.merqato-theme-light [class*="hover\:text-white"]:hover,
+.merqato-theme-light [class*="hover\:text-zinc-100"]:hover,
+.merqato-theme-light [class*="hover\:text-zinc-200"]:hover {
+  color: #0f172a !important;
+}
+
+/* Accent badges, tags, and cards for tipping, income ledger logs, and analytics */
+.merqato-theme-light .bg-emerald-500\/10,
+.merqato-theme-light .bg-emerald-500\/20,
+.merqato-theme-light [class*="bg-emerald-500/10"] {
+  background-color: #e2fbf0 !important;
+  border-color: #86efac !important;
+  color: #15803d !important;
+}
+
+.merqato-theme-light .bg-indigo-500\/10,
+.merqato-theme-light .bg-indigo-500\/20,
+.merqato-theme-light [class*="bg-indigo-500/10"] {
+  background-color: #eef2ff !important;
+  border-color: #c7d2fe !important;
+  color: #4338ca !important;
+}
+
+.merqato-theme-light .bg-rose-500\/10,
+.merqato-theme-light .bg-rose-500\/20,
+.merqato-theme-light [class*="bg-rose-500/10"] {
+  background-color: #fff1f2 !important;
+  border-color: #fecdd3 !important;
+  color: #be123c !important;
+}
+
+.merqato-theme-light .bg-amber-500\/10,
+.merqato-theme-light .bg-amber-500\/20,
+.merqato-theme-light [class*="bg-amber-500/10"] {
+  background-color: #fffbeb !important;
+  border-color: #fde68a !important;
+  color: #b45309 !important;
+}
+
+.merqato-theme-light .text-emerald-400,
+.merqato-theme-light .text-emerald-300 {
+  color: #047857 !important; /* Elegant dark emerald */
+}
+
+.merqato-theme-light .text-indigo-400,
+.merqato-theme-light .text-indigo-300 {
+  color: #4338ca !important; /* Elegant dark indigo */
+}
+
+.merqato-theme-light .text-amber-500,
+.merqato-theme-light .text-amber-400 {
+  color: #b45309 !important; /* Elegant dark amber color */
+}
+
+.merqato-theme-light .text-rose-400,
+.merqato-theme-light .text-rose-300 {
+  color: #be123c !important; /* Elegant dark rose color */
+}
+
+/* Black gradients and custom inline dark opacity overlays fallback */
+.merqato-theme-light .bg-black\/40,
+.merqato-theme-light .bg-black\/20,
+.merqato-theme-light .bg-black\/10,
+.merqato-theme-light .bg-black\/5 {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+/* WebKit scrollbar overlays for light-theme system styling */
+.merqato-theme-light ::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.merqato-theme-light ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.merqato-theme-light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Paint Recharts elements via theme-aware SVG selectors */
+.merqato-theme-light .recharts-cartesian-grid-horizontal line {
+  stroke: #e2e8f0 !important;
+}
+.merqato-theme-light .recharts-cartesian-axis-line,
+.merqato-theme-light .recharts-cartesian-axis-tick-line {
+  stroke: #cbd5e1 !important;
+}
+.merqato-theme-light .recharts-cartesian-axis-tick text {
+  fill: #475569 !important;
+}
+.merqato-theme-light .recharts-tooltip-cursor {
+  stroke: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* ==========================================================================
+   EXTRA HIGH CONTRAST LIGHT MODE WORKSPACE FIXES (TABLES, CRM CARDS & BUTTONS)
+   ========================================================================== */
+
+/* Fix background tables and row details to stand out clearly as light panels */
+.merqato-theme-light .bg-zinc-900\/35,
+.merqato-theme-light .bg-zinc-900\/30,
+.merqato-theme-light .bg-zinc-950\/60,
+.merqato-theme-light .bg-zinc-950\/40,
+.merqato-theme-light .bg-zinc-950\/30,
+.merqato-theme-light .bg-zinc-950\/20,
+.merqato-theme-light [class*="bg-zinc-900/1"],
+.merqato-theme-light [class*="bg-zinc-900/2"],
+.merqato-theme-light [class*="bg-zinc-900/3"] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Ensure any secondary text labels inside the rows/tables show up perfectly */
+.merqato-theme-light .text-zinc-650 {
+  color: #475569 !important;
+}
+
+/* GCash payment history amount */
+.merqato-theme-light span.text-emerald-400 {
+  color: #15803d !important;
+}
+
+/* GCash cash history row name */
+.merqato-theme-light span.text-white {
+  color: #0f172a !important;
+}
+
+/* GCash payments message log text is italicized, make it visible */
+.merqato-theme-light p.text-zinc-300 {
+  color: #475569 !important;
+}
+
+/* Custom button border fallback to prevent dark border outlines */
+.merqato-theme-light .border-zinc-850,
+.merqato-theme-light .border-zinc-900 {
+  border-color: #e2e8f0 !important;
+}
+
+/* Let the mobile simulator escape all custom panel styles and look natural */
+.merqato-theme-light #creator-mobile-page,
+.merqato-theme-light #creator-mobile-page * {
+  background-color: revert !important;
+  color: revert !important;
+  border-color: revert !important;
+  box-shadow: revert !important;
+  text-shadow: revert !important;
+}
+
+

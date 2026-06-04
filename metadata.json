@@ -1,0 +1,6 @@
+{
+  "name": "Merqato",
+  "description": "Premium self-hosted Link-in-Bio platform optimized for Philippine creators, brands, and social-commerce with integrated payment links and lead capture.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
